@@ -18,6 +18,7 @@ public class PasswordEncodingTest {
 
         System.out.println(bcrypt.encode(PASSWORD));
         System.out.println(bcrypt.encode(PASSWORD));
+        System.out.println(bcrypt.encode("apohui"));
     }
 
     @Test
@@ -32,7 +33,7 @@ public class PasswordEncodingTest {
     void testLdap() {
         PasswordEncoder ldap = new LdapShaPasswordEncoder();
         System.out.println(ldap.encode(PASSWORD));
-        System.out.println(ldap.encode(PASSWORD));
+        System.out.println(ldap.encode("tiger"));
     }
 
     @Test
