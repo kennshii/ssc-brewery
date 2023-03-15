@@ -14,7 +14,7 @@ class BeerRestControllerTestIT extends BaseIT {
     @Test
     void deleteBeer() throws Exception {
         mockMvc.perform(delete("/api/v1/beer/493410b3-dd0b-4b78-97bf-289f50f6e74f")
-                .header("Api-key", "kennshi").header("Api-secret", "apohui"))
+                .header("Api-Key", "kennshi").header("Api-Secret", "apohui"))
                 .andExpect(status().isOk());
     }
 
