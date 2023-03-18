@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -51,19 +50,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().sameOrigin();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("kennshi")
-                .password("{bcrypt}$2a$10$IC1zAZVXzy.pMi0ubpRazOsQ20Nw.KfbRcYm7TcMAAdBR.DZ1jT1C")
-                .roles("ADMIN")
-                .and()
-                .withUser("user")
-                .password("{sha256}174cc5772cc5c11c82d5ad9305f0afc116e7b4cf72440fc3108403852af3b1b696b011e26fea346a")
-                .roles("USER");
-
-        auth.inMemoryAuthentication().withUser("scott").password("{ldap}{SSHA}06VFkG/qxgXh8Ayft5V6xOxJdF68qyhB9ZRkTg==").roles("CUSTOMER");
-    }
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication()
+//                .withUser("kennshi")
+//                .password("{bcrypt}$2a$10$IC1zAZVXzy.pMi0ubpRazOsQ20Nw.KfbRcYm7TcMAAdBR.DZ1jT1C")
+//                .roles("ADMIN")
+//                .and()
+//                .withUser("user")
+//                .password("{sha256}174cc5772cc5c11c82d5ad9305f0afc116e7b4cf72440fc3108403852af3b1b696b011e26fea346a")
+//                .roles("USER");
+//
+//        auth.inMemoryAuthentication().withUser("scott").password("{ldap}{SSHA}06VFkG/qxgXh8Ayft5V6xOxJdF68qyhB9ZRkTg==").roles("CUSTOMER");
+//    }
 
     @Bean
     PasswordEncoder passwordEncoder() {
