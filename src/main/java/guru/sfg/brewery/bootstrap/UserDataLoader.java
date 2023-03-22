@@ -28,8 +28,8 @@ public class UserDataLoader implements CommandLineRunner {
         Authority customer = authorityRepository.save(Authority.builder().role("CUSTOMER").build());
 
         userRepository.save(User.builder()
-                .username("spring")
-                .password(passwordEncoder.encode("guru"))
+                .username("kennshi")
+                .password(passwordEncoder.encode("apohui"))
                 .authority(admin)
                 .build());
 
